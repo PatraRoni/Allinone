@@ -16,6 +16,10 @@ import Ayurvedic from "../assets/Ayurvedic.png"
 import Card from './Card'
 import PillButton from './PillButton'
 import PatientSwipeForm from './PatientSwipeForm'
+import PatientFormOffline from './PatientFormOffline'
+import PatientFormOnline from './PatientFormOnline'
+import HomeLabTestForm from './HomeLabTestForm'
+import HospitalLabTestForm from './HospitalLabTestForm'
 
 export default function HealthcareDashboard() {
 
@@ -39,6 +43,10 @@ export default function HealthcareDashboard() {
         <h1 className="font-semibold text-4xl md:text-5xl letter-spacing:-5% text-[#293653]">Everything You Need</h1>
         {/* <h2 className="font-light text-2xl md:text-3xl text-[#293653] mt-1">All In One Place</h2> */}
         <h2 className="font-semibold text-4xl md:text-5xl letter-spacing:-5% text-[#293653]">All In One Place</h2>
+        <HospitalLabTestForm/>
+        <HomeLabTestForm/>
+        <PatientFormOffline/>
+        <PatientFormOnline/>
         
         <PatientSwipeForm/>
         <div className="mt-8 flex items-center justify-center gap-4">
