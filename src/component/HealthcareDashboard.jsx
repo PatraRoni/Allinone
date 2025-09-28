@@ -15,6 +15,7 @@ import Homeopathy from "../assets/Homeopathy.png"
 import Ayurvedic from "../assets/Ayurvedic.png"
 import Card from './Card'
 import PillButton from './PillButton'
+import PatientSwipeForm from './PatientSwipeForm'
 
 export default function HealthcareDashboard() {
 
@@ -39,18 +40,27 @@ export default function HealthcareDashboard() {
         {/* <h2 className="font-light text-2xl md:text-3xl text-[#293653] mt-1">All In One Place</h2> */}
         <h2 className="font-semibold text-4xl md:text-5xl letter-spacing:-5% text-[#293653]">All In One Place</h2>
         
-
+        <PatientSwipeForm/>
         <div className="mt-8 flex items-center justify-center gap-4">
           <PillButton label="Allopathy" img = {Allopathy}/>
           <PillButton label="Homeopathy" img = {Homeopathy}/>
           <PillButton label="Ayurvedic" img = {Ayurvedic}/>
         </div>
 
-        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {categories.map((c) => (
-            <Card key={c.id} title1={c.title1} title2={c.title2} img={c.icon} />
-          ))}
-        </div>
+        <div className="mt-12 overflow-x-auto no-scrollbar">
+  <div className="flex gap-6 px-1">
+    {categories.map((c) => (
+      <div key={c.id} className="flex-shrink-0 min-w-[260px]">
+        <Card title1={c.title1} title2={c.title2} img={c.icon} />
+      </div>
+    ))}
+  </div>
+</div>
+
+<style>{`
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+`}</style>
       </div>
     </div>
   )
